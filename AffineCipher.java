@@ -14,7 +14,7 @@
 import javax.swing.JOptionPane;
 public class AffineCipher
 {
-	private final static String string = JOptionPane.showInputDialog("Please enter the string to be decrypted");
+	private final static String string = JOptionPane.showInputDialog("Please enter the string to be encrypted");
 	//Gets the a and b values from the user to be used in the affine cipher equation
 	private final static String inputValue = JOptionPane.showInputDialog("Please input a value for a");
 	private static int a= Integer.parseInt(inputValue);
@@ -25,8 +25,9 @@ public class AffineCipher
 	public final static void main(String[]args)
 	{
 		//Encrypts and decrypts a string from the user
-		System.out.println("The string to be encrypted is "+ string);
-		String ctxt = AffineCipher.encrypt(string);
+		String txt = string.toUpperCase();
+		System.out.println("The string to be encrypted is "+ txt);
+		String ctxt = AffineCipher.encrypt(txt);
 		System.out.println("The encrypted text is "+ctxt);
 		String ptxt = AffineCipher.decrypt(ctxt);
 		System.out.println("The decrypted text is "+ptxt);
