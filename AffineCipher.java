@@ -1,6 +1,9 @@
  /*
- Author: Elizabeth Fiator & Luis Diniz
+ Author: Elizabeth Fiator 
  Version: April 10, 2016
+ Modifications: 
+ Version: April 16, 2016
+ Modified to take an input string from the user
  Description and Background: The purpose of this class is to encrypt and decrypt a
  test using an Affine Cipher. An Affine Cipher uses the equation c=ap-b(mod 26)
  to encrypt a plaintext. a takes a numerical value that is not a factor or multiple of
@@ -11,20 +14,22 @@
 import javax.swing.JOptionPane;
 public class AffineCipher
 {
+	private final static String string = JOptionPane.showInputDialog("Please enter the string to be decrypted");
 	//Gets the a and b values from the user to be used in the affine cipher equation
 	private final static String inputValue = JOptionPane.showInputDialog("Please input a value for a");
 	private static int a= Integer.parseInt(inputValue);
 	private final static String inputValue1 = JOptionPane.showInputDialog("Please input a value for b");
 	private static int b= Integer.parseInt(inputValue1);
+	
 
 	public final static void main(String[]args)
 	{
-		//Encrypts and decrypts a string "HELLO" using the affine cipher equation
-		String t = "HELLO";
-		String e = AffineCipher.encrypt(t);
-		System.out.println("The encrypted text is "+e);
-		String d = AffineCipher.decrypt(e);
-		System.out.println("The decrypted text is "+d);
+		//Encrypts and decrypts a string from the user
+		System.out.println("The string to be encrypted is "+ string);
+		String ctxt = AffineCipher.encrypt(string);
+		System.out.println("The encrypted text is "+ctxt);
+		String ptxt = AffineCipher.decrypt(ctxt);
+		System.out.println("The decrypted text is "+ptxt);
 	}
 	//Encrypts the string and takes an input of plain text
 	public static String encrypt(String ptxt)
