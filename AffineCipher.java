@@ -5,7 +5,7 @@
  Version: April 16, 2016
  Modified to take an input string from the user
  Description and Background: The purpose of this class is to encrypt and decrypt a
- test using an Affine Cipher. An Affine Cipher uses the equation c=ap-b(mod 26)
+ text using an Affine Cipher. An Affine Cipher uses the equation c=ap-b(mod 26)
  to encrypt a plaintext. a takes a numerical value that is not a factor or multiple of
  26. c is the numerical value of the ciphered text while p is the numerical value 
  of the plaintext.
